@@ -11,3 +11,15 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
+  - name: 'Block #2'
+    task:
+      prologue:
+        commands:
+          - checkout
+      jobs:
+        - name: Install Dependencies
+          commands:
+            - sudo apt-get update
+            - sudo apt-get install -y python3-pip
+            - pip3 install awscli
+            - pip3 install boto3
