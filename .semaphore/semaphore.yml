@@ -19,11 +19,11 @@ blocks:
             - pip3 install boto3
   - name: Deploy to AWS
     task:
-      prologue:
-        commands:
-          - checkout
       jobs:
         - name: Deploy Lambda Function
           commands:
             - chmod +x deploy.sh
             - ./deploy.sh
+      prologue:
+        commands:
+          - checkout
