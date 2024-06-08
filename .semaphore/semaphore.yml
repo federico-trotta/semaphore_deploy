@@ -7,9 +7,6 @@ agent:
 blocks:
   - name: Install Dependencies
     task:
-      prologue:
-        commands:
-          - checkout
       jobs:
         - name: Install AWS CLI
           commands:
